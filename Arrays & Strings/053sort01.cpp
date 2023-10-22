@@ -1,0 +1,85 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void sort01(vector<int>& arr, int n) {
+    int i = 0, j = n - 1;
+    while(i <= j) {
+        if(arr[i] == 0) i++;
+        else if(arr[j] == 1) j--;
+        else {
+            swap(arr[i], arr[j]);
+            i++;
+            j--;
+        }
+        // if(arr[i] == 1 && arr[j] == 0) {
+        //     swap(arr[i], arr[j]);
+        //     i++;
+        //     j--;
+        // } else if(arr[i] == 0) i++;
+        // // arr[j] == 1  --> j--
+        // else j--;
+    }
+}
+
+int main() {
+   int n; 
+   cin >> n;
+   vector<int> arr(n);
+   for(int i = 0; i < n; i++) {
+       cin >> arr[i];
+   }
+   sort01(arr, n);
+   for(auto i: arr) {
+       cout << i << " ";
+   }
+   return 0;
+}
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// void printArray(int arr[], int n) {
+//     for(int i=0; i<n; i++) {
+//         cout << arr[i] << " ";
+//     }
+//     cout << endl;
+// }
+
+// void sortOne(int arr[], int n) {
+
+//     int left = 0, right = n-1;
+
+//     while(left < right) {
+
+//         while(arr[left] == 0 && left < right )  {
+//             left++;
+//         }
+
+//         while(arr[right]==1 && left < right){
+//             right--;
+//         }
+
+//         //agar yha pohoch gye ho, iska matlab
+//         //arr[left]==1 and arr[right]==0
+//         if(left<right)
+//         {
+//             swap(arr[left], arr[right]);
+//             left++;
+//             right--;
+//         }
+//     }
+
+// }
+
+// int main() {
+
+//     int arr[8] = {1,1,0,0,0,0,1,0};
+
+//     sortOne(arr, 8);
+//     printArray(arr, 8);
+
+
+//     return 0;
+// }
